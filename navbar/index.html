@@ -7,61 +7,135 @@
     <link rel="stylesheet" href="navbar.css" />
   </head>
   <body>
-    <img src="logo.svg" alt="Медцентр «Поликлиника №1»" height="44" />
-
-    <div id="navDropdown_vrachi" class="navDropdown" style="display: none">
-      <div class="navDropdownTitle">Врачи</div>
-      <ul class="navDropdownList">
-        <li><a href="#">Терапевт</a></li>
-        <li><a href="#">Терапевт</a></li>
-        <li><a href="#">Терапевт</a></li>
-        <li><a href="#">Терапевт</a></li>
-        <li><a href="#">Терапевт</a></li>
-        <li><a href="#">Терапевт</a></li>
-      </ul>
+    <div id="navDropdown_uslugi" class="navDropdown" style="display: none">
+      <div class="navDropdownSection">
+        <div class="navDropdownTitle">Врачи</div>
+        <ul class="navDropdownList">
+          <li><a href="#">Терапевт</a></li>
+          <li><a href="#">Стоматолог</a></li>
+          <li><a href="#">Кардиолог</a></li>
+          <li><a href="#">Невролог</a></li>
+          <li><a href="#">Хирург</a></li>
+          <li><a href="#">Эндокринолог</a></li>
+          <li><a href="#">ЛОР</a></li>
+          <li><a href="#">Гинеколог</a></li>
+          <li><a href="#">Флеболог</a></li>
+          <li><a href="#">Уролог</a></li>
+          <li><a href="#">Косметолог</a></li>
+          <li><a href="#">Дерматолог</a></li>
+        </ul>
+      </div>
+      <div class="navDropdownSection">
+        <div class="navDropdownTitle">Анализы</div>
+        <ul class="navDropdownList" style="grid-template-columns: 1fr">
+          <li><a href="#">Анализы на коронавирус COVID-19</a></li>
+          <li><a href="#">Процедурный кабинет</a></li>
+          <li><a href="#">Все анализы</a></li>
+        </ul>
+      </div>
+      <div class="navDropdownSection">
+        <div class="navDropdownTitle">Диагностика</div>
+        <ul class="navDropdownList" style="grid-template-columns: 1fr">
+          <li><a href="#">УЗИ Диагностика</a></li>
+          <li><a href="#">ЭКГ</a></li>
+        </ul>
+      </div>
+      <div class="navDropdownSection">
+        <div class="navDropdownTitle">Косметология</div>
+        <ul class="navDropdownList" style="grid-template-columns: 1fr">
+          <li><a href="#">Эстетическая косметология</a></li>
+          <li><a href="#">Инъекционная косметология</a></li>
+          <li><a href="#">Лазерная косметология</a></li>
+          <li><a href="#">Пирсинг</a></li>
+          <li><a href="#">Массаж</a></li>
+        </ul>
+      </div>
+      <div class="navDropdownSection">
+        <div class="navDropdownTitle">Другое</div>
+        <ul class="navDropdownList" style="grid-template-columns: 1fr">
+          <li><a href="#">Справки</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+    
+    <div id="navDropdown_medcentr" style="display: none">
+      <div class="navDropdownSection">
+        <ul class="navDropdownList" style="grid-template-columns: 1fr">
+          <li><a href="#">О Медцентре</a></li>
+          <li><a href="#">Контакты</a></li>
+          <li><a href="#">Сотрудники</a></li>
+          <li><a href="#">Вакансии</a></li>
+          <li><a href="#">Отзывы</a></li>
+          <li><a href="#">Документы</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div id="myDiv">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aliquid
-      at, impedit incidunt animi sunt placeat deleniti enim! Optio molestias
-      repellendus corrupti possimus reprehenderit. Perferendis impedit cum
-      asperiores cupiditate earum magni repellendus culpa molestiae vitae dicta
-      dignissimos eius quae, repellat ab ad nisi autem voluptates veniam quis
-      mollitia praesentium ex.
-    </div>
-    <button data-template="navDropdown_vrachi">One</button>
-    <button data-template="two">Two</button>
-    <button data-template="three">Three</button>
+    <div id="navContainer">
+      <div class="navLogo">
+        <a href="#"
+          ><img src="logo.svg" alt="Медцентр «Поликлиника №1»" width="200"
+        /></a>
+      </div>
 
-    <div style="display: none">
-      <div id="one">
-        <strong>Content for `one`</strong>
+      <div class="navMenu">
+        <ul>
+          <li>
+            <a
+              class="navMenuLink"
+              href="#"
+              dropdown="navDropdown_uslugi"
+              tabindex="0"
+              >Услуги</a
+            >
+          </li>
+
+          <li>
+            <a
+              class="navMenuLink"
+              href="#"
+              dropdown="navDropdown_medcentr"
+              tabindex="1"
+              >Медцентр</a
+            >
+          </li>
+        </ul>
       </div>
-      <div id="two">
-        <strong>Content for `two`</strong>
-      </div>
-      <div id="three">
-        <strong>Content for `three`</strong>
+
+      <div class="navContacts">
+        <button href="#">+7 496 795-60-06</button>
+        <button href="#">Записаться</button>
       </div>
     </div>
+
+    <div>lorem1000</div>
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script>
-      tippy('button', {
+      const navMenuLinks = document.querySelectorAll('.navMenuLink');
+
+      tippy('.navMenuLink', {
         content(el) {
-          const id = el.getAttribute('data-template');
+          const id = el.getAttribute('dropdown');
           const template = document.getElementById(id);
           return template.innerHTML;
         },
         allowHTML: true,
         interactive: true,
-        hideOnClick: true,
-        animationFill: true,
-        trigger: 'click mouseenter',
+        trigger: 'mouseenter focus',
         placement: 'bottom',
-        arrow: false,
-        offset: [0, 0],
+        maxWidth: '600',
+        role: 'dropdown',
+        offset: [0, 20],
+
+        onShow(el) {
+          navMenuLinks[el.id - 1].style.cssText = 'color: green;';
+        },
+        onHide(el) {
+          navMenuLinks[el.id - 1].style.cssText = 'color: black;';
+        },
       });
     </script>
   </body>
