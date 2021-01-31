@@ -6,5 +6,63 @@
     <title>Новая навигация для медцентра</title>
     <link rel="stylesheet" href="navbar.css" />
   </head>
-  <body></body>
+  <body>
+    <img src="logo.svg" alt="Медцентр «Поликлиника №1»" height="44" />
+
+    <div id="navDropdown_vrachi" class="navDropdown" style="display: none">
+      <div class="navDropdownTitle">Врачи</div>
+      <ul class="navDropdownList">
+        <li><a href="#">Терапевт</a></li>
+        <li><a href="#">Терапевт</a></li>
+        <li><a href="#">Терапевт</a></li>
+        <li><a href="#">Терапевт</a></li>
+        <li><a href="#">Терапевт</a></li>
+        <li><a href="#">Терапевт</a></li>
+      </ul>
+    </div>
+
+    <div id="myDiv">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aliquid
+      at, impedit incidunt animi sunt placeat deleniti enim! Optio molestias
+      repellendus corrupti possimus reprehenderit. Perferendis impedit cum
+      asperiores cupiditate earum magni repellendus culpa molestiae vitae dicta
+      dignissimos eius quae, repellat ab ad nisi autem voluptates veniam quis
+      mollitia praesentium ex.
+    </div>
+    <button data-template="navDropdown_vrachi">One</button>
+    <button data-template="two">Two</button>
+    <button data-template="three">Three</button>
+
+    <div style="display: none">
+      <div id="one">
+        <strong>Content for `one`</strong>
+      </div>
+      <div id="two">
+        <strong>Content for `two`</strong>
+      </div>
+      <div id="three">
+        <strong>Content for `three`</strong>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+      tippy('button', {
+        content(el) {
+          const id = el.getAttribute('data-template');
+          const template = document.getElementById(id);
+          return template.innerHTML;
+        },
+        allowHTML: true,
+        interactive: true,
+        hideOnClick: true,
+        animationFill: true,
+        trigger: 'click mouseenter',
+        placement: 'bottom',
+        arrow: false,
+        offset: [0, 0],
+      });
+    </script>
+  </body>
 </html>
