@@ -35,7 +35,7 @@ html {
   list-style-type: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   column-gap: 24px;
   row-gap: 12px;
   font-size: 18px;
@@ -76,18 +76,63 @@ html {
 }
 
 .navDropdownSection {
-  padding: 24px;
-  border-bottom: 1px solid rgb(236, 236, 236);
+  padding: 24px 32px 24px 24px;
+  // border-bottom: 1px solid rgb(236, 236, 236);
 }
 
 .navDropdownSection:last-child {
   border-bottom: none;
 }
 
+.navDropdownSection > button {
+  padding: 12px 16px;
+  margin-top: 24px;
+  width: 100%;
+  background-color: $green;
+  border-radius: 99px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navDropdownSection > img {
+  margin-bottom: 12px;
+}
+
+// dropdown grid Uslugi
+#navDropdown_uslugiGrid {
+  display: grid;
+  grid-template-areas:
+    'vrachi analizi'
+    'vrachi diagnostika'
+    'vrachi kosmetologia'
+    'vrachi drugoe';
+}
+
+#navDropdownVrachi {
+  grid-area: vrachi;
+  border-right: 1px solid rgb(236, 236, 236);
+}
+#navDropdownAnalizi {
+  grid-area: analizi;
+  border-bottom: 1px solid rgb(236, 236, 236);
+}
+#navDropdownDiagnostika {
+  grid-area: diagnostika;
+  border-bottom: 1px solid rgb(236, 236, 236);
+}
+#navDropdownKosmetologia {
+  grid-area: kosmetologia;
+  border-bottom: 1px solid rgb(236, 236, 236);
+}
+#navDropdownDrugoe {
+  grid-area: drugoe;
+}
+
 // Tippy CSS
 .tippy-box {
   min-width: 200px;
-  max-width: 600px;
+  max-width: 500px;
   padding: 0;
   border-radius: 12px;
   background: white;

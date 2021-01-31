@@ -8,7 +8,8 @@
   </head>
   <body>
     <div id="navDropdown_uslugi" class="navDropdown" style="display: none">
-      <div class="navDropdownSection">
+      <div id="navDropdown_uslugiGrid">
+      <div id="navDropdownVrachi" class="navDropdownSection">
         <div class="navDropdownTitle">Врачи</div>
         <ul class="navDropdownList">
           <li><a href="#">Терапевт</a></li>
@@ -24,8 +25,10 @@
           <li><a href="#">Косметолог</a></li>
           <li><a href="#">Дерматолог</a></li>
         </ul>
+        <button src="#" >Вызов врача на дом</button>
       </div>
-      <div class="navDropdownSection">
+      <div id="navDropdownAnalizi" class="navDropdownSection">
+        <!-- <img src="https://img.icons8.com/color/48/000000/syringe-with-a-drop-of-blood.png"/> -->
         <div class="navDropdownTitle">Анализы</div>
         <ul class="navDropdownList" style="grid-template-columns: 1fr">
           <li><a href="#">Анализы на коронавирус COVID-19</a></li>
@@ -33,14 +36,15 @@
           <li><a href="#">Все анализы</a></li>
         </ul>
       </div>
-      <div class="navDropdownSection">
+      <div id="navDropdownDiagnostika" class="navDropdownSection">
+        <!-- <img src="https://img.icons8.com/color/48/000000/pulse.png"/> -->
         <div class="navDropdownTitle">Диагностика</div>
         <ul class="navDropdownList" style="grid-template-columns: 1fr">
           <li><a href="#">УЗИ Диагностика</a></li>
           <li><a href="#">ЭКГ</a></li>
         </ul>
       </div>
-      <div class="navDropdownSection">
+      <div id="navDropdownKosmetologia" class="navDropdownSection">
         <div class="navDropdownTitle">Косметология</div>
         <ul class="navDropdownList" style="grid-template-columns: 1fr">
           <li><a href="#">Эстетическая косметология</a></li>
@@ -50,7 +54,7 @@
           <li><a href="#">Массаж</a></li>
         </ul>
       </div>
-      <div class="navDropdownSection">
+      <div id="navDropdownDrugoe" class="navDropdownSection">
         <div class="navDropdownTitle">Другое</div>
         <ul class="navDropdownList" style="grid-template-columns: 1fr">
           <li><a href="#">Справки</a></li>
@@ -58,6 +62,7 @@
       </div>
     </div>
     </div>
+  </div>
     
     <div id="navDropdown_medcentr" style="display: none">
       <div class="navDropdownSection">
@@ -68,6 +73,17 @@
           <li><a href="#">Вакансии</a></li>
           <li><a href="#">Отзывы</a></li>
           <li><a href="#">Документы</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="navDropdown_materiali" style="display: none">
+      <div class="navDropdownSection">
+        <div class="navDropdownTitle">Полезные материалы</div>
+        <ul class="navDropdownList">
+          <li><a href="#">Контактная информация о контролирующих органах</a></li>
+          <li><a href="#">Подготовка к диагностике</a></li>
+          <li><a href="#">Рекомендации по сдаче анализов</a></li>
         </ul>
       </div>
     </div>
@@ -98,6 +114,15 @@
               dropdown="navDropdown_medcentr"
               tabindex="1"
               >Медцентр</a
+            >
+          </li>
+          <li>
+            <a
+              class="navMenuLink"
+              href="#"
+              dropdown="navDropdown_materiali"
+              tabindex="1"
+              >Полезное</a
             >
           </li>
         </ul>
