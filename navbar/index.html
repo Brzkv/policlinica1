@@ -139,8 +139,20 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script>
-      const navMenuLinks = document.querySelectorAll('.navMenuLink');
+      
+      window.addEventListener('resize', function(window) {
+        const current = window.target.innerWidth
+        if (current > 500) {
+          console.log('ширина больше 500. Сейчас: ' + current + 'px')
+        } else {
+          console.log('ширина меньше 500. Сейчас: ' + current + 'px')
 
+        }
+      })
+
+      
+
+      const navMenuLinks = document.querySelectorAll('.navMenuLink');
       tippy('.navMenuLink', {
         content(el) {
           const id = el.getAttribute('dropdown');
