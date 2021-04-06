@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
 
 #nav {
   display: flex;
@@ -89,6 +89,9 @@ export default {
   margin-right: 16px;
   transition: all 300ms;
   transition-timing-function: cubic-bezier();
+  &.router-link-exact-active {
+      border-bottom: 1px solid white;
+    }
 }
 .servicesMenu > a:last-child { margin-right: 0px }
 .servicesMenu > a:hover {
